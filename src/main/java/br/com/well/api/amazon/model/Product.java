@@ -31,10 +31,10 @@ public class Product extends AbstractEntity{
     private String imgUrl;
 
     @ManyToMany
-    @JoinTable(name = "AMZ_PRODUCT_CATEGORY", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Locale.Category> categories = new HashSet<>();
+    @JoinTable(name = "AMZ_PRODUCT_CATEGORY", joinColumns = @JoinColumn(name = "PRODUCT_ID"), inverseJoinColumns = @JoinColumn(name = "CATEGORY_ID"))
+    private Set<Category> categories = new HashSet<>();
 
-    @OneToMany(mappedBy = "ID.PRODUCT")
+    @OneToMany(mappedBy = "id.product")
     private Set<OrderItem> items = new HashSet<>();
 
 }

@@ -2,5 +2,6 @@ package br.com.well.api.amazon.model;
 
 import java.io.Serializable;
 
-public class AbstractEntity implements Serializable {
+public abstract class AbstractEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
 }

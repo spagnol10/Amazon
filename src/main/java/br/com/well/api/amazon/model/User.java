@@ -8,17 +8,18 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.util.Date;
+import java.time.Instant;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @Table(name = "AMZ_USER")
-public class User extends AbstractEntity{
+public class User extends AbstractEntity {
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "NAME")
@@ -45,7 +46,6 @@ public class User extends AbstractEntity{
     @Column(name = "SECRET")
     private String secret;
 
-    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_USER")
     private List<Address> address;
@@ -58,14 +58,25 @@ public class User extends AbstractEntity{
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATED_AT")
-    private Date createdAt;
+    private Instant createdAt;
 
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "UPDATED_AT")
-    private Date updatedAt;
+    private Instant updatedAt;
 
     @Transient
     private EnumMessageType messageType;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User user)) return false;
+        return Objects.equals(getId(), user.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
 }

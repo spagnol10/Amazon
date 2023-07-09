@@ -17,11 +17,11 @@ import java.util.Objects;
 public class OrderItemPK extends AbstractEntity {
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "ORDER_ID")
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "PRODUCT_ID")
     private Product product;
 
     @Override

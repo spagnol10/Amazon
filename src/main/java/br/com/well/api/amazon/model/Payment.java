@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
 import java.util.Objects;
@@ -21,6 +22,9 @@ public class Payment extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @CreationTimestamp
+    @Column(name = "MOMENT")
     private Instant moment;
 
     @JsonIgnore
