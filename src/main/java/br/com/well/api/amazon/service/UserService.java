@@ -3,19 +3,20 @@ package br.com.well.api.amazon.service;
 import br.com.well.api.amazon.model.User;
 import br.com.well.api.amazon.model.enums.Response;
 import br.com.well.api.amazon.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
-    private Response userMessageService;
+    private final Response userMessageService;
 
     public ResponseEntity<?> registerAndUpdate(User user, String action) {
         if (user.getName().isEmpty()) {
@@ -36,11 +37,13 @@ public class UserService {
     public Iterable<User> findAll(){
         return userRepository.findAll();
     }
-
-
     public ResponseEntity<?> delete(Long id) {
         userRepository.deleteById(id);
         userMessageService.setMessage("User deleted");
-        return new ResponseEntity<Response>(userMessageService,HttpStatus.OK);
+        return new ResponseEntity<>(userMessageService,HttpStatus.OK);
+    }
+    public User findById(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        return  user.get();
     }
 }

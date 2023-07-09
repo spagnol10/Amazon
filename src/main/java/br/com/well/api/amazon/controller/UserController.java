@@ -16,7 +16,7 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
-        return service.registerAndUpdate(user, "cadastar");
+        return service.registerAndUpdate(user, "register");
     }
 
     @PutMapping("/update")
@@ -26,7 +26,13 @@ public class UserController {
 
     @GetMapping("/list")
     public Iterable<User> listAllUser(){
-        return service.findAllUser();
+        return service.findAll();
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<User> findById(@PathVariable Long id) {
+        User obj = service.findById(id);
+        return ResponseEntity.ok().body(obj);
     }
 
     @DeleteMapping("/delete/{id}")
