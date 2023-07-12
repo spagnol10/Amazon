@@ -3,7 +3,9 @@ package br.com.well.api.amazon.model;
 import br.com.well.api.amazon.model.enums.EnumMessageType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -15,6 +17,8 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "AMZ_USER")
 public class User extends AbstractEntity {
 
@@ -50,11 +54,6 @@ public class User extends AbstractEntity {
     @JoinColumn(name = "ID_USER")
     private List<Address> address;
 
-    @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ID_USER")
-    private List<Order> orders;
-
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREATED_AT")
@@ -68,15 +67,4 @@ public class User extends AbstractEntity {
     @Transient
     private EnumMessageType messageType;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User user)) return false;
-        return Objects.equals(getId(), user.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
 }

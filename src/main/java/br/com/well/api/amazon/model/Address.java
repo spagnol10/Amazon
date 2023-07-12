@@ -1,7 +1,10 @@
 package br.com.well.api.amazon.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -11,6 +14,8 @@ import java.time.Instant;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "AMZ_USER_ADDRESS")
 public class Address extends AbstractEntity {
 
@@ -18,6 +23,7 @@ public class Address extends AbstractEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "ID_USER", referencedColumnName = "ID")
     private User user;

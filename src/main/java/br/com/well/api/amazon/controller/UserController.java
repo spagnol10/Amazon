@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/user")
@@ -25,8 +27,8 @@ public class UserController {
     }
 
     @GetMapping("/list")
-    public Iterable<User> listAllUser(){
-        return service.findAll();
+    public ResponseEntity<List<User>> listAllUser(){
+        return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping(value = "/{id}")
