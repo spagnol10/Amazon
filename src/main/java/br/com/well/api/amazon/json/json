@@ -1,0 +1,53 @@
+{
+	"id":1,
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "password": "mypassword",
+  "document": "123456789",
+  "phone": "1234567890",
+  "active": true,
+  "acceptTerms": true,
+  "secret": "abcdefg",
+  "address": [
+    {
+      "state": "State",
+      "city": "City",
+      "district": "District",
+      "street": "Street",
+      "number": 123,
+      "numberAp": null,
+      "active": true,
+      "main": false,
+      "latitude": "123.456",
+      "longitude": "789.012",
+      "secret": "xyz",
+      "createdAt": "2022-07-01T10:30:00Z",
+      "updatedAt": "2022-07-02T15:45:00Z"
+    }
+  ],
+	"orders": [
+		{
+			"id": null,
+			"moment": "2019-06-20T19:53:07Z",
+			"client": {
+								"id": 1,
+                "name": null,
+                "email": null,
+                "password": null,
+                "document": null,
+                "phone": null,
+                "active": false,
+                "acceptTerms": false,
+                "secret": null,
+                "address": null,
+                "createdAt": null,
+                "updatedAt": null,
+                "id": null,
+		        		"messageType": null
+	}
+}
+	],
+  "createdAt": "2022-07-01T10:30:00Z",
+  "updatedAt": "2022-07-02T15:45:00Z",
+	"messageType": "CREATE"
+}
