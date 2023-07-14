@@ -51,11 +51,11 @@ public class User extends AbstractEntity {
     private String secret;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ID_USER")
+    @JoinColumn(name = "ID_ADDRESS_USER")
     private List<Address> address;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "CLIENT_ID")
+    @JoinColumn(name = "ID_ORDER_USER")
     private List<Order> orders;
 
     @CreationTimestamp
