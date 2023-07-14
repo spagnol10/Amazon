@@ -18,8 +18,13 @@ public class OrderController {
     @Autowired
     private OrderService service;
 
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody Order order) {
+        return service.registerAndUpdate(order, "register");
+    }
+
     @GetMapping("/list")
-    public ResponseEntity<List<Order>> listAllUser(){
+    public ResponseEntity<List<Order>> listAllOrder(){
         return ResponseEntity.ok(service.findAll());
     }
 

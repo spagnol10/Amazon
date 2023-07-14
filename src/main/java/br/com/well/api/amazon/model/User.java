@@ -54,8 +54,9 @@ public class User extends AbstractEntity {
     @JoinColumn(name = "ID_USER")
     private List<Address> address;
 
-    @OneToMany(mappedBy = "client")
-    private List<Order> orders = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "CLIENT_ID")
+    private List<Order> orders;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)

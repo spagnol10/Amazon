@@ -30,7 +30,8 @@ public class Order extends AbstractEntity {
     @Column(name = "MOMENT")
     private Instant moment;
 
-    @ManyToOne
-    @JoinColumn(name = "CLIENT_ID")
+    @JsonIgnore
+    @ManyToOne()
+    @JoinColumn(name = "ID_ORDER_USER", referencedColumnName = "ID")
     private User client;
 }

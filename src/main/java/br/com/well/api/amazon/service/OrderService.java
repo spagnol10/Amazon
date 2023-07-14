@@ -21,16 +21,28 @@ public class OrderService {
 
     private final Response userMessageService;
 
-    public List<Order> findAll(){
+    public ResponseEntity<?> registerAndUpdate(Order order, String action) {
+
+        if (action.equals("register")) {
+            return new ResponseEntity<>(orderRepository.save(order), HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(orderRepository.save(order), HttpStatus.OK);
+        }
+    }
+
+
+    public List<Order> findAll() {
         return orderRepository.findAll();
     }
+
     public ResponseEntity<?> delete(Long id) {
         orderRepository.deleteById(id);
         userMessageService.setMessage("Order deleted");
-        return new ResponseEntity<>(userMessageService,HttpStatus.OK);
+        return new ResponseEntity<>(userMessageService, HttpStatus.OK);
     }
+
     public Order findById(Long id) {
         Optional<Order> order = orderRepository.findById(id);
-        return  order.get();
+        return order.get();
     }
 }

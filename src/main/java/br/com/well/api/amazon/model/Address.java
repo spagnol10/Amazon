@@ -16,7 +16,7 @@ import java.time.Instant;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "AMZ_USER_ADDRESS")
+@Table(name = "AMZ_ADDRESS")
 public class Address extends AbstractEntity {
 
     @Id
@@ -25,7 +25,7 @@ public class Address extends AbstractEntity {
 
     @JsonIgnore
     @ManyToOne()
-    @JoinColumn(name = "ID_USER", referencedColumnName = "ID")
+    @JoinColumn(name = "ID_ADDRESS_USER", referencedColumnName = "ID")
     private User user;
 
     @Column(name = "STATE")
