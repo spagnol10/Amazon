@@ -16,10 +16,10 @@ public enum EnumMessageType {
 
     private String key;
 
-    public static EnumMessageType getEnumIfExists(String e) {
+    public static EnumMessageType getEnumIfExists(String msg) {
 
         for (EnumMessageType enumValue : EnumMessageType.values()) {
-            if (enumValue.getKey().equalsIgnoreCase(e)) {
+            if (enumValue.getKey().equalsIgnoreCase(msg)) {
                 return enumValue;
             }
         }
