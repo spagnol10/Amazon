@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.well.api.amazon.model.Order;
+import br.com.well.api.amazon.model.entities.Order;
 import br.com.well.api.amazon.service.OrderService;
 
 @RestController

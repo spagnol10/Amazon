@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import br.com.well.api.amazon.model.Order;
+import br.com.well.api.amazon.model.entities.Order;
 import br.com.well.api.amazon.model.enums.Response;
 import br.com.well.api.amazon.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
