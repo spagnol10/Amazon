@@ -31,14 +31,14 @@ public class OrderController {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<List<Order>> listAllOrder() {
+    public ResponseEntity<List<Order>> listAll() {
         return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Order> findById(@PathVariable Long id) {
         Order obj = service.findById(id);
-        return ResponseEntity.ok().body(obj);
+        return ResponseEntity.ok(obj);
     }
 
     @PutMapping("/update")

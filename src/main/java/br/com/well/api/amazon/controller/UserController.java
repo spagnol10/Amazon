@@ -1,12 +1,21 @@
 package br.com.well.api.amazon.controller;
 
-import br.com.well.api.amazon.model.User;
-import br.com.well.api.amazon.service.UserService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import br.com.well.api.amazon.model.User;
+import br.com.well.api.amazon.service.UserService;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -21,20 +30,20 @@ public class UserController {
         return service.register(user);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<?> update(@RequestBody User user) {
-        return service.update(user);
-    }
-
     @GetMapping("/list")
-    public ResponseEntity<List<User>> listAllUser() {
+    public ResponseEntity<List<User>> listAll() {
         return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         User obj = service.findById(id);
-        return ResponseEntity.ok().body(obj);
+        return ResponseEntity.ok(obj);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<?> update(@RequestBody User user) {
+        return service.update(user);
     }
 
     @DeleteMapping("/delete/{id}")
