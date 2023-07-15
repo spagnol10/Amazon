@@ -3,12 +3,12 @@ package br.com.well.api.amazon.user.service;
 import java.util.List;
 import java.util.Optional;
 
-import br.com.well.api.amazon.user.model.entities.User;
-import br.com.well.api.amazon.user.model.enums.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import br.com.well.api.amazon.user.model.entities.User;
+import br.com.well.api.amazon.user.model.enums.ResponseUser;
 import br.com.well.api.amazon.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -18,7 +18,7 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    private final Response messageUser;
+    private final ResponseUser messageUser;
 
     public ResponseEntity<?> register(User user) {
         if (user.getName().isEmpty()) {

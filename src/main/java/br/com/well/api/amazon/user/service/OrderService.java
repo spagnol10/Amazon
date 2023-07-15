@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import br.com.well.api.amazon.user.model.entities.Order;
-import br.com.well.api.amazon.user.model.enums.Response;
+import br.com.well.api.amazon.user.model.enums.ResponseUser;
 import br.com.well.api.amazon.user.repository.OrderRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
 
-    private final Response messageOrder;
+    private final ResponseUser messageOrder;
 
     public ResponseEntity<?> register(Order order) {
         if (order.getMoment().equals(null)) {
