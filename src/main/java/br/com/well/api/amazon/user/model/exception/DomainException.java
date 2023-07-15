@@ -1,4 +1,4 @@
-package br.com.well.api.amazon.model.exception;
+package br.com.well.api.amazon.user.model.exception;
 
 public class DomainException extends RuntimeException {
 

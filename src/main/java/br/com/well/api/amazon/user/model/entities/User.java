@@ -1,12 +1,12 @@
-package br.com.well.api.amazon.model.entities;
+package br.com.well.api.amazon.user.model.entities;
 
 import java.time.Instant;
 import java.util.List;
 
+import br.com.well.api.amazon.user.model.enums.EnumMessageType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import br.com.well.api.amazon.model.enums.EnumMessageType;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

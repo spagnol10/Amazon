@@ -1,4 +1,4 @@
-package br.com.well.api.amazon.model.enums;
+package br.com.well.api.amazon.user.model.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

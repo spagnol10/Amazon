@@ -1,4 +1,4 @@
-package br.com.well.api.amazon.user;
+package br.com.well.api.amazon.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

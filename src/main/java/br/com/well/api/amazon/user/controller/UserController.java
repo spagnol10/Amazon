@@ -1,7 +1,8 @@
-package br.com.well.api.amazon.controller;
+package br.com.well.api.amazon.user.controller;
 
 import java.util.List;
 
+import br.com.well.api.amazon.user.model.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.well.api.amazon.model.entities.User;
-import br.com.well.api.amazon.service.UserService;
+import br.com.well.api.amazon.user.service.UserService;
 
 @RestController
 @CrossOrigin(origins = "*")

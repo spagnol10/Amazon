@@ -1,15 +1,15 @@
-package br.com.well.api.amazon.service;
+package br.com.well.api.amazon.user.service;
 
 import java.util.List;
 import java.util.Optional;
 
+import br.com.well.api.amazon.user.model.entities.User;
+import br.com.well.api.amazon.user.model.enums.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import br.com.well.api.amazon.model.entities.User;
-import br.com.well.api.amazon.model.enums.Response;
-import br.com.well.api.amazon.repository.UserRepository;
+import br.com.well.api.amazon.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

@@ -1,8 +1,7 @@
-package br.com.well.api.amazon.repository;
+package br.com.well.api.amazon.user.repository;
 
+import br.com.well.api.amazon.user.model.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import br.com.well.api.amazon.model.entities.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 }

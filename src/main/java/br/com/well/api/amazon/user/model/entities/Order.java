@@ -1,4 +1,4 @@
-package br.com.well.api.amazon.model.entities;
+package br.com.well.api.amazon.user.model.entities;
 
 import java.time.Instant;
 
