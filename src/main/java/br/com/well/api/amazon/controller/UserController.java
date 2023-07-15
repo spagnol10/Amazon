@@ -18,16 +18,16 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
-        return service.registerAndUpdate(user, "register");
+        return service.register(user);
     }
 
     @PutMapping("/update")
     public ResponseEntity<?> update(@RequestBody User user) {
-        return service.registerAndUpdate(user, "update");
+        return service.update(user);
     }
 
     @GetMapping("/list")
-    public ResponseEntity<List<User>> listAllUser(){
+    public ResponseEntity<List<User>> listAllUser() {
         return ResponseEntity.ok(service.findAll());
     }
 
@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id){
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         return service.delete(id);
     }
 }
