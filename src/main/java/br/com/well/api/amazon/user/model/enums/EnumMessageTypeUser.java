@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum EnumMessageType {
+public enum EnumMessageTypeUser {
 
     CREATE("CREATE"),
     UPDATE("UPDATE"),
@@ -16,9 +16,9 @@ public enum EnumMessageType {
 
     private String key;
 
-    public static EnumMessageType getEnumIfExists(String msg) {
+    public static EnumMessageTypeUser getEnumIfExists(String msg) {
 
-        for (EnumMessageType enumValue : EnumMessageType.values()) {
+        for (EnumMessageTypeUser enumValue : EnumMessageTypeUser.values()) {
             if (enumValue.getKey().equalsIgnoreCase(msg)) {
                 return enumValue;
             }

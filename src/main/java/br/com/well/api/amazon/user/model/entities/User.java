@@ -3,7 +3,7 @@ package br.com.well.api.amazon.user.model.entities;
 import java.time.Instant;
 import java.util.List;
 
-import br.com.well.api.amazon.user.model.enums.EnumMessageType;
+import br.com.well.api.amazon.user.model.enums.EnumMessageTypeUser;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -80,6 +80,6 @@ public class User extends AbstractEntity {
     private Instant updatedAt;
 
     @Transient
-    private EnumMessageType messageType;
+    private EnumMessageTypeUser messageType;
 
 }
