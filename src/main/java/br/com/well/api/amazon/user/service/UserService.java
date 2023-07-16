@@ -16,46 +16,46 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserRepository userRepository;
+    private final UserRepository repository;
 
-    private final ResponseUser messageUser;
+    private final ResponseUser message;
 
     public ResponseEntity<?> register(User user) {
         if (user.getName().isEmpty()) {
-            messageUser.setMessage("User name is required");
-            return new ResponseEntity<>(messageUser, HttpStatus.BAD_REQUEST);
+            message.setMessage("User name is required");
+            return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
         } else if (user.getPassword().isEmpty()) {
-            messageUser.setMessage("User password type is required");
-            return new ResponseEntity<>(messageUser, HttpStatus.BAD_REQUEST);
+            message.setMessage("User password type is required");
+            return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
+            return new ResponseEntity<>(repository.save(user), HttpStatus.CREATED);
         }
     }
 
     public List<User> findAll() {
-        return userRepository.findAll();
+        return repository.findAll();
     }
 
     public User findById(Long id) {
-        Optional<User> user = userRepository.findById(id);
+        Optional<User> user = repository.findById(id);
         return user.get();
     }
 
     public ResponseEntity<?> update(User user) {
         if (user.getName().isEmpty()) {
-            messageUser.setMessage("User name is required");
-            return new ResponseEntity<>(messageUser, HttpStatus.BAD_REQUEST);
+            message.setMessage("User name is required");
+            return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
         } else if (user.getPassword().isEmpty()) {
-            messageUser.setMessage("User password type is required");
-            return new ResponseEntity<>(messageUser, HttpStatus.BAD_REQUEST);
+            message.setMessage("User password type is required");
+            return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(userRepository.save(user), HttpStatus.OK);
+            return new ResponseEntity<>(repository.save(user), HttpStatus.OK);
         }
     }
 
     public ResponseEntity<?> delete(Long id) {
-        userRepository.deleteById(id);
-        messageUser.setMessage("User deleted");
-        return new ResponseEntity<>(messageUser, HttpStatus.OK);
+        repository.deleteById(id);
+        message.setMessage("User deleted");
+        return new ResponseEntity<>(message, HttpStatus.OK);
     }
 }
