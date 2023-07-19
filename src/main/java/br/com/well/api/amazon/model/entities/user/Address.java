@@ -1,5 +1,7 @@
-package br.com.well.api.amazon.model.entities;
+package br.com.well.api.amazon.model.entities.user;
 
+import br.com.well.api.amazon.model.entities.AbstractEntity;
+import br.com.well.api.amazon.model.entities.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

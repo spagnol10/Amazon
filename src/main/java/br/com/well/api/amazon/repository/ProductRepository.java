@@ -1,8 +1,7 @@
 package br.com.well.api.amazon.repository;
 
+import br.com.well.api.amazon.model.entities.product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import br.com.well.api.amazon.model.entities.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 

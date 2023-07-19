@@ -1,5 +1,6 @@
-package br.com.well.api.amazon.model.entities;
+package br.com.well.api.amazon.model.entities.user;
 
+import br.com.well.api.amazon.model.entities.AbstractEntity;
 import br.com.well.api.amazon.model.enums.EnumMessageTypeUser;
 import br.com.well.api.amazon.model.enums.UserRole;
 import jakarta.persistence.*;
@@ -79,6 +80,12 @@ public class User extends AbstractEntity implements UserDetails {
 
     @Transient
     private EnumMessageTypeUser messageType;
+
+    public User(String login, String password, UserRole role) {
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,5 +1,7 @@
-package br.com.well.api.amazon.model.entities;
+package br.com.well.api.amazon.model.entities.product;
 
+import br.com.well.api.amazon.model.entities.AbstractEntity;
+import br.com.well.api.amazon.model.entities.user.Order;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,8 +1,11 @@
-package br.com.well.api.amazon.model.entities;
+package br.com.well.api.amazon.model.entities.user;
 
 import java.time.Instant;
 import java.util.List;
 
+import br.com.well.api.amazon.model.entities.AbstractEntity;
+import br.com.well.api.amazon.model.entities.product.ProductCart;
+import br.com.well.api.amazon.model.entities.user.User;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

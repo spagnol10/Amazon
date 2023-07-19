@@ -1,4 +1,4 @@
-package br.com.well.api.amazon.model.entities;
+package br.com.well.api.amazon.model.entities.product;
 
 import java.util.Date;
 import java.util.List;
