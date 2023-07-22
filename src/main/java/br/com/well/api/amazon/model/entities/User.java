@@ -1,6 +1,7 @@
 package br.com.well.api.amazon.model.entities;
 
 import java.time.Instant;
+import java.util.Collection;
 import java.util.List;
 
 import br.com.well.api.amazon.model.enums.EnumMessageTypeUser;
@@ -24,6 +25,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Getter
@@ -31,7 +35,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "AMZ_USER")
-public class User extends AbstractEntity {
+public class User extends AbstractEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +46,12 @@ public class User extends AbstractEntity {
 
     @Column(name = "EMAIL")
     private String email;
+
+    @Column(name = "ROLE")
+    private UserRole role;
+
+    @Column(name = "LOGIN")
+    private String login;
 
     @Column(name = "PASSWORD")
     private String password;
@@ -82,4 +92,38 @@ public class User extends AbstractEntity {
     @Transient
     private EnumMessageTypeUser messageType;
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        if (this.role == UserRole.ADMIN) {
+            return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        } else {
+            return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+
+        }
+    }
+
+    @Override
+    public String getUsername() {
+        return login;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }
