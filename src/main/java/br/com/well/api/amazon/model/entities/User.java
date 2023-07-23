@@ -80,6 +80,12 @@ public class User extends AbstractEntity implements UserDetails {
     @Transient
     private EnumMessageTypeUser messageType;
 
+    public User(String login, String password, UserRole role) {
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if (this.role == UserRole.ADMIN) {
