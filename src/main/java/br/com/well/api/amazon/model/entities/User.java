@@ -59,11 +59,11 @@ public class User extends AbstractEntity implements UserDetails {
     @Column(name = "ROLE")
     private UserRole role;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_ADDRESS_USER")
     private List<Address> address;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_ORDER_USER")
     private List<Order> orders;
 
