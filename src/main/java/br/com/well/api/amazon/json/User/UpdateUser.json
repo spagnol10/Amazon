@@ -3,7 +3,7 @@
 	"name": "John ",
 	"email": "johndoe@example.com",
 	"password": "********",
-	"document": "123456789",
+	"cpf": "123456789",
 	"phone": "1234567890",
 	"active": true,
 	"acceptTerms": true,

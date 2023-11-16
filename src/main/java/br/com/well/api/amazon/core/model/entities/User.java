@@ -41,8 +41,8 @@ public class User extends AbstractEntity implements UserDetails {
     @Column(name = "PASSWORD")
     private String password;
 
-    @Column(name = "DOCUMENT")
-    private String document;
+    @Column(name = "CPF")
+    private String cpf;
 
     @Column(name = "PHONE")
     private String phone;
