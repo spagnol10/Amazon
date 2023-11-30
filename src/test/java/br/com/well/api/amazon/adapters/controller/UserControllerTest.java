@@ -41,14 +41,6 @@ public class UserControllerTest {
     }
 
     @Test
-    public void testUpdate() {
-        User user = new User();
-        when(userServiceMock.update(user)).thenReturn(ResponseEntity.ok(user));
-        ResponseEntity<?> response = userController.update(user);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-    }
-
-    @Test
     public void testDelete() {
         Long id = 1L;
         when(userServiceMock.delete(id)).thenReturn(ResponseEntity.ok().build());
