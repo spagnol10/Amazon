@@ -1,6 +1,6 @@
 package br.com.well.api.amazon.service;
 
-import br.com.well.api.amazon.repository.UserRepository;
+import br.com.well.api.amazon.core.domain.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

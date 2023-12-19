@@ -1,6 +1,6 @@
 package br.com.well.api.amazon.infra.security;
 
-import br.com.well.api.amazon.repository.UserRepository;
+import br.com.well.api.amazon.core.domain.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

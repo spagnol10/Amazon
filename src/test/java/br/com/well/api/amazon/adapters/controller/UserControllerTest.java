@@ -1,8 +1,8 @@
 package br.com.well.api.amazon.adapters.controller;
 
-import br.com.well.api.amazon.core.model.entities.User;
+import br.com.well.api.amazon.core.domain.entities.User;
+import br.com.well.api.amazon.presentation.controller.UserController;
 import br.com.well.api.amazon.service.UserService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;

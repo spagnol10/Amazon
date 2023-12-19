@@ -7,9 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import br.com.well.api.amazon.core.model.entities.Order;
-import br.com.well.api.amazon.core.model.enums.ResponseUser;
-import br.com.well.api.amazon.repository.OrderRepository;
+import br.com.well.api.amazon.core.domain.entities.Order;
+import br.com.well.api.amazon.core.domain.enums.ResponseUser;
+import br.com.well.api.amazon.core.domain.repositories.OrderRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

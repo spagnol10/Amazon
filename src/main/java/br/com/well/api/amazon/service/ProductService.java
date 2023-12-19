@@ -7,9 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import br.com.well.api.amazon.core.model.entities.Product;
-import br.com.well.api.amazon.core.model.enums.Responseproduct;
-import br.com.well.api.amazon.repository.ProductRepository;
+import br.com.well.api.amazon.core.domain.entities.Product;
+import br.com.well.api.amazon.core.domain.enums.Responseproduct;
+import br.com.well.api.amazon.core.domain.repositories.ProductRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

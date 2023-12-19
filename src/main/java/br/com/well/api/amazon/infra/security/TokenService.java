@@ -1,6 +1,6 @@
 package br.com.well.api.amazon.infra.security;
 
-import br.com.well.api.amazon.core.model.entities.User;
+import br.com.well.api.amazon.core.domain.entities.User;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
